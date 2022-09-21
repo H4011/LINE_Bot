@@ -1,0 +1,25 @@
+/* @macaron_miku_ */
+/* 全部 */
+@media (prefers-color-scheme: light) {
+    :root {
+        --main-color: paleturquoise;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-color: #1d8b8b;
+    }
+}
+/* PC用CSS */
+@media print, screen and (min-width: 992px) {
+    .midasi {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+}
+
+/* スマホ用CSS */
+@media screen and (max-width: 992px) {
+
+}
