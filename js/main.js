@@ -1,5 +1,8 @@
 var A_list = [];
 var B_list = [];
+var A2_list = [];
+var B2_list = [];
+var need = false;
 function jikaannwari() {
   document.querySelectorAll("div.input-field.A").forEach(element => {
     var count = 0;
@@ -61,7 +64,6 @@ xhr.onreadystatechange = function(){
         console.log(A_list);
     }
 }
-
 xhr.send(null);
 var xhr2 = new XMLHttpRequest();
 xhr2.open('GET', 'https://h4011.github.io/LINE_Bot/B.txt', true);
@@ -92,8 +94,46 @@ xhr2.onreadystatechange = function(){
         console.log(B_list);
     }
 }
+xhr2.send(null);
+var xhr3 = new XMLHttpRequest();
+xhr3.open('GET', 'https://h4011.github.io/LINE_Bot/A2.txt', true);
+xhr3.onreadystatechange = function(){
+    if((xhr3.readyState == 4) && (xhr3.status == 200)){
+      A2_list = xhr3.responseText.replaceAll("\n",",").split(",");
+    }
+}
+xhr3.send(null);
+var xhr4 = new XMLHttpRequest();
+xhr4.open('GET', 'https://h4011.github.io/LINE_Bot/B2.txt', true);
+xhr4.onreadystatechange = function(){
+    if((xhr4.readyState == 4) && (xhr4.status == 200)){
+      B2_list = xhr4.responseText.replaceAll("\n",",").split(",");
+    }
+}
+xhr4.send(null);
+function Set_need() {
+  need = true;
+  Set_jikannwari();
+  window.setTimeout(set, 50);
+}
+function Reset() {
+  need = false;
+  Set_jikannwari();
+  window.setTimeout(set, 50);
+}
 function Set_jikannwari() {
+  var jikan = document.querySelectorAll("div.input-field.A");
+  jikan.forEach(element => {
+    element.classList.add("remove");
+    element.classList.remove("A");
+  });
+  var jikan2 = document.querySelectorAll("div.input-field.B");
+  jikan2.forEach(element => {
+    element.classList.add("remove");
+    element.classList.remove("B");
+  });
   var jikann = document.querySelectorAll("td.select");
+  var count0 = 0;
   jikann.forEach(element => {
     var newElementA = document.createElement("div");
     newElementA.setAttribute("class","input-field A");
@@ -101,7 +141,6 @@ function Set_jikannwari() {
     var newElementA2 = document.createElement("select");
     var Option0 = document.createElement("option");
     Option0.setAttribute("value","0");
-    Option0.setAttribute("selected","");
     var Option1 = document.createElement("option");
     Option1.setAttribute("value","1");
     var Option2 = document.createElement("option");
@@ -114,6 +153,23 @@ function Set_jikannwari() {
     Option5.setAttribute("value","5");
     var Option6 = document.createElement("option");
     Option6.setAttribute("value","6");
+    if(A2_list[count0] == "0" && need == true) {
+      Option0.setAttribute("selected","");
+    } else if(A2_list[count0] == "1" && need == true) {
+      Option1.setAttribute("selected","");
+    } else if(A2_list[count0] == "2" && need == true) {
+      Option2.setAttribute("selected","");
+    } else if(A2_list[count0] == "3" && need == true) {
+      Option3.setAttribute("selected","");
+    } else if(A2_list[count0] == "4" && need == true) {
+      Option4.setAttribute("selected","");
+    } else if(A2_list[count0] == "5" && need == true) {
+      Option5.setAttribute("selected","");
+    } else if(A2_list[count0] == "6" && need == true) {
+      Option6.setAttribute("selected","");
+    } else {
+      Option0.setAttribute("selected","");
+    }
     newElementA2.appendChild(Option0);
     newElementA2.appendChild(Option1);
     newElementA2.appendChild(Option2);
@@ -128,7 +184,6 @@ function Set_jikannwari() {
     var newElementB2 = document.createElement("select");
     var Option10 = document.createElement("option");
     Option10.setAttribute("value","0");
-    Option10.setAttribute("selected","");
     var Option11 = document.createElement("option");
     Option11.setAttribute("value","1");
     var Option12 = document.createElement("option");
@@ -141,6 +196,23 @@ function Set_jikannwari() {
     Option15.setAttribute("value","5");
     var Option16 = document.createElement("option");
     Option16.setAttribute("value","6");
+    if(B2_list[count0] == "0" && need == true) {
+      Option10.setAttribute("selected","");
+    } else if(B2_list[count0] == "1" && need == true) {
+      Option11.setAttribute("selected","");
+    } else if(B2_list[count0] == "2" && need == true) {
+      Option12.setAttribute("selected","");
+    } else if(B2_list[count0] == "3" && need == true) {
+      Option13.setAttribute("selected","");
+    } else if(B2_list[count0] == "4" && need == true) {
+      Option14.setAttribute("selected","");
+    } else if(B2_list[count0] == "5" && need == true) {
+      Option15.setAttribute("selected","");
+    } else if(B2_list[count0] == "6" && need == true) {
+      Option16.setAttribute("selected","");
+    } else {
+      Option10.setAttribute("selected","");
+    }
     newElementB2.appendChild(Option10);
     newElementB2.appendChild(Option11);
     newElementB2.appendChild(Option12);
@@ -151,7 +223,9 @@ function Set_jikannwari() {
     newElementB.appendChild(newElementB2);
     element.appendChild(newElementA);
     element.appendChild(newElementB);
+    count0++;
   });
+  count0 = 0;
   var jikann2 = document.querySelectorAll("td.select2");
   jikann2.forEach(element => {
     var newElementA = document.createElement("div");
@@ -160,7 +234,6 @@ function Set_jikannwari() {
     var newElementA2 = document.createElement("select");
     var Option0 = document.createElement("option");
     Option0.setAttribute("value","0");
-    Option0.setAttribute("selected","");
     var Option1 = document.createElement("option");
     Option1.setAttribute("value","1");
     var Option2 = document.createElement("option");
@@ -173,6 +246,23 @@ function Set_jikannwari() {
     Option5.setAttribute("value","5");
     var Option6 = document.createElement("option");
     Option6.setAttribute("value","6");
+    if(A2_list[count0] == "0" && need == true) {
+      Option0.setAttribute("selected","");
+    } else if(A2_list[count0] == "1" && need == true) {
+      Option1.setAttribute("selected","");
+    } else if(A2_list[count0] == "2" && need == true) {
+      Option2.setAttribute("selected","");
+    } else if(A2_list[count0] == "3" && need == true) {
+      Option3.setAttribute("selected","");
+    } else if(A2_list[count0] == "4" && need == true) {
+      Option4.setAttribute("selected","");
+    } else if(A2_list[count0] == "5" && need == true) {
+      Option5.setAttribute("selected","");
+    } else if(A2_list[count0] == "6" && need == true) {
+      Option6.setAttribute("selected","");
+    } else {
+      Option0.setAttribute("selected","");
+    }
     newElementA2.appendChild(Option0);
     newElementA2.appendChild(Option1);
     newElementA2.appendChild(Option2);
@@ -187,7 +277,6 @@ function Set_jikannwari() {
     var newElementB2 = document.createElement("select");
     var Option10 = document.createElement("option");
     Option10.setAttribute("value","0");
-    Option10.setAttribute("selected","");
     var Option11 = document.createElement("option");
     Option11.setAttribute("value","1");
     var Option12 = document.createElement("option");
@@ -200,6 +289,23 @@ function Set_jikannwari() {
     Option15.setAttribute("value","5");
     var Option16 = document.createElement("option");
     Option16.setAttribute("value","6");
+    if(B2_list[count0] == "0" && need == true) {
+      Option10.setAttribute("selected","");
+    } else if(B2_list[count0] == "1" && need == true) {
+      Option11.setAttribute("selected","");
+    } else if(B2_list[count0] == "2" && need == true) {
+      Option12.setAttribute("selected","");
+    } else if(B2_list[count0] == "3" && need == true) {
+      Option13.setAttribute("selected","");
+    } else if(B2_list[count0] == "4" && need == true) {
+      Option14.setAttribute("selected","");
+    } else if(B2_list[count0] == "5" && need == true) {
+      Option15.setAttribute("selected","");
+    } else if(B2_list[count0] == "6" && need == true) {
+      Option16.setAttribute("selected","");
+    } else {
+      Option10.setAttribute("selected","");
+    }
     newElementB2.appendChild(Option10);
     newElementB2.appendChild(Option11);
     newElementB2.appendChild(Option12);
@@ -210,6 +316,7 @@ function Set_jikannwari() {
     newElementB.appendChild(newElementB2);
     element.appendChild(newElementA);
     element.appendChild(newElementB);
+    count0++;
   });
   var count = 0;
   var count2 = 0;
@@ -321,11 +428,16 @@ function Set_jikannwari() {
   });
   $(document).ready(function(){
     $('select').formSelect();
+    var re = document.querySelectorAll("div.remove");
+    re.forEach(element => {
+      element.remove();
+    });
     jikaannwari();
   });
+  window.setTimeout(set, 50);
+  need = false;
   console.log("fin3");
 }
-xhr2.send(null);
 
 function set(){
   document.querySelectorAll("div.AB ul li").forEach(element => {
@@ -339,6 +451,19 @@ $(function() {
   // ボタンをクリックしたら発動
     $('div.AB ul li').click(function() {
       window.setTimeout(clickAB, 50);
+    });
+});
+
+$(function() {
+  // ボタンをクリックしたら発動
+    $('a.need').click(function() {
+      Set_need();
+    });
+});
+$(function() {
+  // ボタンをクリックしたら発動
+    $('a.reset').click(function() {
+      Reset();
     });
 });
 function clickAB() {
