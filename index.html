@@ -15,13 +15,25 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link link type="text/css" rel="stylesheet" href="./css/main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    :root {
+      --class-A: none;
+      --class-B: none;
+    }
+    div.input-field.A {
+      display: var(--class-A);
+    }
+    div.input-field.B {
+      display: var(--class-B);
+    }
+  </style>
 </head>
 <body>
   <p class="midasi">クラスを選択してください</p>
   <div class="row" style="margin:0px 3vw 0px 3vw">
-    <div class="input-field col s12 m4">
+    <div class="input-field col s12 m4 AB">
       <select class="ABclass">
-        <option value="" disabled selected>選択してください</option>
+        <option value="0" disabled selected>選択してください</option>
         <option value="1">Aa</option>
         <option value="2">Ab</option>
         <option value="3">Ba</option>
@@ -29,147 +41,379 @@
       </select>
     </div>
   </div>
-  <div style="margin:50px 3vw 50px 3vw;padding:0px;" align="center">
-    <table width="98%" style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;">
+  <div style="margin:50px 3vw 50px 3vw;padding:0px;overflow-x: scroll;" align="center" class="tableScroll PC">
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;">
       <tbody>
         <tr>
           <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;">1限目</td>
-          <td style="border:1px solid #000000;text-align:center;">2限目</td>
-          <td style="border:1px solid #000000;text-align:center;">3限目</td>
-          <td style="border:1px solid #000000;text-align:center;">4限目</td>
-          <td style="border:1px solid #000000;text-align:center;">5限目</td>
-          <td style="border:1px solid #000000;text-align:center;">6限目</td>
-          <td style="border:1px solid #000000;text-align:center;">7限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">1限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">2限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">3限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">4限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">5限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">6限目</td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">7限目</td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">月</td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
+          <td class="select" style="border:1px solid #000000;text-align:center;">
+            <!--
+            <div class="input-field A">
               <select>
-                <option value="0" selected>空き</option>
-                <option value="1">生涯スポーツ</option>
-              </select>
-            </div>
-          </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
-              <select>
-                <option value="0" selected>空き</option>
+                <option value="0" selected></option>
                 <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
               </select>
             </div>
-          </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
+            <div class="input-field B">
               <select>
-                <option value="0" selected>空き</option>
+                <option value="0" selected></option>
                 <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+                <option value="6"></option>
               </select>
             </div>
+            -->
           </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
-              <select>
-                <option value="0" selected>空き</option>
-                <option value="1"></option>
-              </select>
-            </div>
-          </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
-              <select>
-                <option value="0" selected>空き</option>
-                <option value="1"></option>
-              </select>
-            </div>
-          </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
-              <select>
-                <option value="0" selected>空き</option>
-                <option value="1"></option>
-              </select>
-            </div>
-          </td>
-          <td style="border:1px solid #000000;text-align:center;">
-            <div class="input-field">
-              <select>
-                <option value="0" selected>空き</option>
-                <option value="1"></option>
-              </select>
-            </div>
-          </td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">火</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">水</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">木</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">金</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">土</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
         <tr>
           <td style="border:1px solid #000000;text-align:center;">KICS</td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
-          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
+          <td class="select" style="border:1px solid #000000;text-align:center;"></td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div style="margin:50px 3vw 50px 3vw;padding:0px;overflow-x: scroll;" align="center" class="SP">
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">月曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">火曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">水曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">木曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">金曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">土曜日</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <table style="border-collapse: collapse;border:1px solid #000000;background-color:#FFFFFF;color:#000000;text-align:left;white-space: nowrap;margin-top: 2vh;">
+      <tbody>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;"></td>
+          <td class="top" style="border:1px solid #000000;text-align:center;">K I C S</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">1</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">2</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">3</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">4</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">5</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">6</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000000;text-align:center;">7</td>
+          <td class="select2" style="border:1px solid #000000;text-align:center;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a class="waves-effect waves-light btn" style="margin-left: 3vw;">完了</a>
+  <p></p>
   <script>
   $(document).ready(function(){
     $('select').formSelect();
   });
   </script>
-  <script src="./js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>

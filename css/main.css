@@ -11,15 +11,40 @@
         --main-color: #1d8b8b;
     }
 }
+.not-display {
+    display: none !important;
+}
+.tableScroll table{
+    width: 100%;
+}
 /* PC用CSS */
 @media print, screen and (min-width: 992px) {
     .midasi {
         margin-left: 3vw;
         margin-right: 3vw;
     }
+    .tableScroll {
+        overflow: auto;
+        white-space: nowrap;
+        min-width: 130%;
+    }
+    .SP {
+        display: none !important;
+    }
 }
 
 /* スマホ用CSS */
 @media screen and (max-width: 992px) {
-
+    .midasi {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+    .tableScroll {
+        overflow: auto;
+        white-space: nowrap;
+        min-width: 400%;
+    }
+    .PC {
+        display: none !important;
+    }
 }
